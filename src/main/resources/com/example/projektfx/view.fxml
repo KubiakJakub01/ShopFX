@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainStage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projektfx.Controller">
+   <children>
+      <Button fx:id="stopPlayBtn" disable="true" layoutX="83.0" layoutY="746.0" mnemonicParsing="false" onAction="#onStopPlayBtnAction" text="Stop">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Separator layoutX="200.0" orientation="VERTICAL" prefHeight="792.0" prefWidth="0.0" />
+      <AnchorPane fx:id="kasyKlienciPane" layoutX="-1.0" layoutY="1.0" prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="liczbaKasLb" layoutX="10.0" layoutY="20.0" text="Liczba kas:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="liczbaKasText" alignment="CENTER" layoutX="95.0" layoutY="15.0" prefHeight="25.0" prefWidth="47.0" text="5">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Label fx:id="maxKlientowLb" layoutX="10.0" layoutY="65.0" text="Max liczba klientów:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="maxKlientowText" alignment="CENTER" layoutX="140.0" layoutY="60.0" prefHeight="25.0" prefWidth="47.0" text="25">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Button fx:id="saveKasyKlienciBtn" layoutX="70.0" layoutY="95.0" mnemonicParsing="false" onAction="#onSaveKasyKlienciBtn" text="Save">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="80.0" layoutY="128.0" />
+            <Label fx:id="warningKasaKlientLb" layoutX="20.0" layoutY="128.0" text=" " />
+         </children>
+      </AnchorPane>
+      <Separator layoutY="149.0" prefHeight="4.0" prefWidth="200.0" />
+      <AnchorPane fx:id="czasPane" layoutY="153.0" prefHeight="330.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="35.0" layoutY="10.0" text="Wjeście do sklepu:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="czasWejsciaDoSklepuText" alignment="CENTER_RIGHT" disable="true" layoutX="35.0" layoutY="30.0" prefHeight="25.0" prefWidth="85.0" text="400" />
+            <Label layoutX="35.0" layoutY="70.0" text="Podejście do kolejki">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="130.0" text="Podejście do kasy">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="125.0" layoutY="35.0" text="[ms]" />
+            <TextField fx:id="czasPodejsciaDoKolejkiText" alignment="CENTER_RIGHT" disable="true" layoutX="35.0" layoutY="90.0" prefHeight="25.0" prefWidth="85.0" text="450" />
+            <TextField fx:id="czasPodejsciaDoKasyTesxt" alignment="CENTER_RIGHT" disable="true" layoutX="35.0" layoutY="150.0" prefHeight="25.0" prefWidth="85.0" text="250" />
+            <Label layoutX="125.0" layoutY="95.0" text="[ms]" />
+            <Label layoutX="125.0" layoutY="155.0" text="[ms]" />
+            <Label layoutX="35.0" layoutY="190.0" text="Czas do przerwy">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="czasDoPrzerwyText" alignment="CENTER_RIGHT" disable="true" layoutX="35.0" layoutY="210.0" prefHeight="25.0" prefWidth="85.0" text="4000" />
+            <Label layoutX="35.0" layoutY="250.0" text="Czas trwania przerwy">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="czasPrzerwyText" alignment="CENTER_RIGHT" disable="true" layoutX="35.0" layoutY="270.0" prefHeight="25.0" prefWidth="85.0" text="2500" />
+            <Label layoutX="125.0" layoutY="215.0" text="[ms]" />
+            <Label layoutX="125.0" layoutY="275.0" text="[ms]" />
+            <Label fx:id="warningCzasLb" layoutX="20.0" layoutY="350.0" text=" " />
+         </children>
+      </AnchorPane>
+      <Separator layoutY="520.0" prefHeight="4.0" prefWidth="200.0" />
+      <Button fx:id="saveTimeBtn" disable="true" layoutX="83.0" layoutY="470.0" mnemonicParsing="false" onAction="#onSaveTimeBtn" text="Save">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Slider fx:id="obslugaSlider" blockIncrement="0.5" layoutX="10.0" layoutY="565.0" majorTickUnit="0.2" max="2.0" minorTickCount="1" prefHeight="25.0" prefWidth="180.0" showTickMarks="true" value="1.0" />
+      <Slider fx:id="sklepSlider" blockIncrement="0.2" layoutX="10.0" layoutY="625.0" majorTickUnit="0.2" max="2.0" minorTickCount="1" prefHeight="25.0" prefWidth="180.0" showTickMarks="true" value="1.0" />
+      <Slider fx:id="kolejkaSlider" blockIncrement="0.2" layoutX="10.0" layoutY="685.0" majorTickUnit="0.2" max="2.0" minorTickCount="1" prefHeight="25.0" prefWidth="180.0" showTickMarks="true" value="1.0" />
+      <Label layoutX="5.0" layoutY="600.0" text="Prędkość wpuszczania do sklepu ">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label layoutX="3.0" layoutY="660.0" text="Prędkość podchodzenia do kolejki">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label layoutX="50.0" layoutY="540.0" text="Prędkość obsługi">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
